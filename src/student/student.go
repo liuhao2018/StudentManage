@@ -73,5 +73,20 @@ func Edit() {
 }
 
 func Query() {
+	conn,err := redis.Dial("tcp","127.0.0.1:6379")
 
+	if err != nil {
+		fmt.Println("connect to redis error",err)
+		return
+	}
+
+	defer conn.Close()
+
+	result,err := conn.Do("GET","刘昊")
+
+	if err == nil {
+		fmt.Printf("%s",result)
+	}else {
+		fmt.Println("query failed",err)
+	}
 }

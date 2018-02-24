@@ -21,11 +21,11 @@ func main() {
 		case 1:
 			student.Add()
 		case 2:
-
+			student.Delete()
 		case 3:
-
+			student.Edit()
 		case 4:
-			
+			student.Query()
 		default:
 			println("输入无效，请重新输入")
 		}
